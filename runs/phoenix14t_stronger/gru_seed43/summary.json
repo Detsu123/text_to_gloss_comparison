@@ -1,0 +1,15 @@
+{
+  "model": "gru",
+  "seed": 43,
+  "dataset": "PHOENIX14T",
+  "experiment": "phoenix14t_stronger",
+  "parameters": 5938497,
+  "best_epoch": 26,
+  "epochs_run": 38,
+  "best_dev_bleu4": 18.655502479648508,
+  "training_wall_seconds": 1127.645858111,
+  "train_only_seconds": 1102.3459157770017,
+  "peak_gpu_memory_mib": 300.82958984375,
+  "device": "cuda",
+  "train_dev_fingerprint": "4083e21613355c0b5602657d7a9951f6366120e562f0f2e8613bcbbf1529c44b"
+}

@@ -1,0 +1,687 @@
+I want you to act as a senior NLP/Deep Learning researcher and ML engineer and carry out this research project end-to-end.
+
+PROJECT TITLE
+Comparative Evaluation of RNN, GRU, LSTM, and Transformer Models for Text-to-Sign Language Gloss Translation
+
+MAIN GOAL
+Build and experimentally compare sequence-to-sequence neural architectures for Text-to-Sign-Language-Gloss translation.
+
+The experiment should translate written German sentences into German Sign Language (DGS) gloss sequences using the RWTH-PHOENIX-Weather 2014T / PHOENIX14T dataset.
+
+This is NOT a sign video recognition project.
+The main task is:
+
+German written text
+→ model
+→ DGS gloss sequence
+
+The long-term motivation is to later adapt the methodology to Mongolian Text → Mongolian Sign Language Gloss translation.
+
+MY HARDWARE CONSTRAINT
+My local computer has:
+- NVIDIA RTX 4050 Laptop GPU
+- 6 GB VRAM
+- Windows 11 / Ubuntu available
+- Python environment available
+
+All models and training configurations must therefore be realistic for a 6 GB GPU.
+Do not design unnecessarily large models.
+
+IMPORTANT WORKING RULE
+Do not stop at giving me a plan.
+
+Actually build the project as far as the environment permits:
+- research the dataset
+- obtain/prepare the dataset when legally and technically available
+- inspect its real structure
+- write the code
+- verify the code
+- run preprocessing
+- train models if compute/data access permits
+- evaluate them
+- save results
+- generate figures
+- document everything
+- prepare research-paper-ready outputs
+
+If the PHOENIX14T dataset requires registration, authentication, or manual approval and you cannot download it automatically:
+1. do NOT invent data or experimental results,
+2. still build and test the complete pipeline using a very small clearly-labelled synthetic/sample dataset,
+3. clearly tell me exactly which dataset files I must place into which directory,
+4. make the real dataset runnable with one command once I provide it.
+
+Never fabricate BLEU scores, training times, dataset statistics, or other results.
+
+==================================================
+1. RESEARCH QUESTION
+==================================================
+
+Primary research question:
+
+How do recurrent sequence-to-sequence architectures and Transformer architectures compare for low-resource Text-to-Sign-Language-Gloss translation under a controlled experimental setting?
+
+Secondary questions:
+
+- How does vanilla RNN compare with gated recurrent architectures?
+- Does GRU provide a good performance/complexity trade-off?
+- Does LSTM improve long-range sequence modeling?
+- Does Transformer perform better on longer sentences?
+- How do models differ in parameter count and training time?
+- What types of translation errors are produced by each model?
+
+Do not assume beforehand that Transformer will win.
+The conclusions must follow the measured results.
+
+==================================================
+2. DATASET
+==================================================
+
+Use RWTH-PHOENIX-Weather 2014T / PHOENIX14T.
+
+First verify from authoritative sources:
+- dataset purpose
+- source language
+- target gloss language
+- official train/dev/test split
+- number of samples
+- file structure
+- licensing/access requirements
+
+Use the official train/dev/test split when available.
+
+For this research we only need:
+
+German text → DGS gloss
+
+Do NOT perform video processing unless it is necessary to read the dataset metadata.
+
+Create a clean internal format such as:
+
+id | text | gloss | split
+
+Perform exploratory analysis:
+- number of training/dev/test samples
+- source vocabulary size
+- gloss vocabulary size
+- average source sentence length
+- average target gloss length
+- maximum lengths
+- duplicate pairs
+- missing values
+- unknown/OOV statistics
+
+Save dataset statistics to files for later use in the paper.
+
+Prevent data leakage.
+
+==================================================
+3. PREPROCESSING
+==================================================
+
+Develop one common preprocessing pipeline for all neural models.
+
+Source German:
+- Unicode normalization
+- whitespace normalization
+- tokenization
+- preserve linguistically important information
+- avoid aggressive preprocessing that could artificially favor one architecture
+
+Target gloss:
+- tokenize gloss sequences
+- add special tokens:
+  <PAD>
+  <UNK>
+  <SOS>
+  <EOS>
+
+Build vocabularies using TRAINING DATA ONLY.
+
+Do not use test data to create vocabularies, tune rules, or choose hyperparameters.
+
+Save vocabularies and preprocessing configuration.
+
+Prefer a simple reproducible word-level baseline tokenizer first.
+Do not introduce pretrained subword models unless there is a clear experimental reason.
+
+==================================================
+4. MODELS
+==================================================
+
+Implement FOUR main models.
+
+A. RNN + Attention Seq2Seq
+
+Input
+→ source embedding
+→ RNN encoder
+→ attention
+→ RNN decoder
+→ linear output projection
+→ gloss probabilities
+
+B. GRU + Attention Seq2Seq
+
+Input
+→ source embedding
+→ GRU encoder
+→ attention
+→ GRU decoder
+→ output
+
+C. LSTM + Attention Seq2Seq
+
+Input
+→ source embedding
+→ LSTM encoder
+→ attention
+→ LSTM decoder
+→ output
+
+D. Transformer Encoder-Decoder
+
+Input
+→ embedding
+→ positional encoding
+→ Transformer encoder
+→ Transformer decoder
+→ output projection
+→ gloss probabilities
+
+Use the SAME preprocessing, data splits and evaluation procedures for all four.
+
+Make the comparison as fair as practical.
+
+Suggested lightweight starting configuration:
+
+Recurrent models:
+embedding_size = 256
+hidden_size = 256
+num_layers = 1 or 2
+dropout = approximately 0.2–0.3
+
+Transformer:
+d_model = 256
+n_heads = 4
+encoder_layers = 2
+decoder_layers = 2
+feedforward_dim = 512
+dropout = approximately 0.1
+
+These are starting values, not absolute requirements.
+Adjust downward if necessary for RTX 4050 6GB.
+
+Report the final configuration actually used.
+
+==================================================
+5. OPTIONAL NON-NEURAL BASELINE
+==================================================
+
+Investigate whether a defensible simple linguistic/dictionary baseline can be constructed.
+
+Do NOT invent DGS grammar rules.
+
+Only include a rule/dictionary baseline if the transformation rules can be justified using reliable linguistic or dataset evidence.
+
+Otherwise explicitly state why it was excluded.
+
+The neural comparison is more important than forcing an invalid rule-based system.
+
+==================================================
+6. TRAINING
+==================================================
+
+Use PyTorch unless there is a strong technical reason not to.
+
+Recommended starting conditions:
+
+optimizer = Adam or AdamW
+batch_size = 16 initially
+max_epochs = approximately 30–50
+early_stopping = enabled
+gradient_clipping = enabled for recurrent models
+teacher_forcing = configurable for recurrent Seq2Seq
+padding ignored in loss
+loss = cross entropy
+checkpoint best validation model
+
+Use mixed precision when safe and useful for the RTX 4050.
+
+If batch size 16 exceeds 6 GB VRAM:
+reduce to 8 or use gradient accumulation.
+
+Set reproducible random seeds.
+
+At minimum use:
+seed = 42
+
+If runtime permits, repeat important experiments with 3 seeds and report:
+
+mean ± standard deviation
+
+Do not waste time on large hyperparameter searches.
+The priority is a clean and controlled comparison.
+
+Track for every epoch:
+- train loss
+- validation loss
+- relevant validation translation metric
+- epoch duration
+
+Save:
+- best checkpoint
+- final configuration
+- logs
+- training curves
+
+==================================================
+7. DECODING
+==================================================
+
+Implement inference properly.
+
+Start with greedy decoding for every model.
+
+If time permits, additionally implement a small beam search such as beam size 3 or 5.
+
+Do not compare one model using beam search and another using greedy decoding unless this is explicitly identified as a separate experiment.
+
+Stop generation at <EOS>.
+Set a sensible maximum target sequence length.
+
+==================================================
+8. EVALUATION
+==================================================
+
+This is a translation problem, NOT classification.
+
+Primary evaluation metrics:
+
+- BLEU-1
+- BLEU-2
+- BLEU-3
+- BLEU-4
+- chrF
+- TER
+
+Also calculate when useful:
+- sequence exact match
+- token-level edit distance / WER-like metric
+
+Clearly explain what each metric means.
+
+Direction:
+BLEU ↑ better
+chrF ↑ better
+TER ↓ better
+
+Use standard libraries such as SacreBLEU where appropriate.
+
+Do not invent metric implementations if a reliable standard implementation exists.
+
+==================================================
+9. FAIR MODEL COMPARISON
+==================================================
+
+Produce a final table similar to:
+
+Model
+BLEU-1
+BLEU-2
+BLEU-3
+BLEU-4
+chrF
+TER
+Parameters
+Best epoch
+Training time
+Peak GPU memory if measurable
+
+Compare:
+
+RNN + Attention
+GRU + Attention
+LSTM + Attention
+Transformer
+
+Do not fill values until they are actually measured.
+
+==================================================
+10. SENTENCE LENGTH ANALYSIS
+==================================================
+
+I especially want an additional experiment based on input sequence length.
+
+Separate test examples into sensible groups such as:
+
+Short
+Medium
+Long
+
+Choose thresholds based on the actual dataset distribution rather than arbitrarily if possible.
+
+Calculate model performance for each length group.
+
+Goal:
+
+Determine whether recurrent models degrade more strongly as source sequence length increases and whether Transformer behaves differently.
+
+Generate a publication-quality figure/table for this analysis.
+
+==================================================
+11. ERROR ANALYSIS
+==================================================
+
+Perform qualitative error analysis.
+
+Inspect real model outputs and categorize common errors such as:
+
+- missing gloss
+- inserted gloss
+- incorrect lexical choice
+- incorrect sequence order
+- repeated gloss
+- unknown word handling
+- long-sequence failure
+- premature EOS
+- hallucinated target tokens
+
+Do not force these categories if the actual errors suggest better categories.
+
+Create a table containing representative examples:
+
+Source German sentence
+Reference DGS gloss
+RNN prediction
+GRU prediction
+LSTM prediction
+Transformer prediction
+
+Select useful examples:
+- one easy example
+- one medium example
+- one long example
+- examples where models disagree
+- at least one failure case
+
+==================================================
+12. FIGURES
+==================================================
+
+Generate clean paper-ready figures.
+
+At minimum:
+
+1. Training/validation loss curves
+2. Validation metric curve where useful
+3. Final model BLEU-4 comparison
+4. chrF comparison
+5. TER comparison
+6. performance by sentence length
+7. model parameter count comparison
+8. training time comparison if available
+
+Avoid decorative visualizations.
+Figures must directly support the research questions.
+
+Save figures as high-resolution PNG and, when practical, PDF/SVG.
+
+==================================================
+13. PROJECT STRUCTURE
+==================================================
+
+Create a clean reproducible repository, for example:
+
+text_to_gloss_comparison/
+│
+├── README.md
+├── requirements.txt
+├── config/
+│   └── default.yaml
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── README.md
+│
+├── src/
+│   ├── data/
+│   │   ├── preprocess.py
+│   │   ├── dataset.py
+│   │   └── vocabulary.py
+│   │
+│   ├── models/
+│   │   ├── attention.py
+│   │   ├── rnn_seq2seq.py
+│   │   ├── gru_seq2seq.py
+│   │   ├── lstm_seq2seq.py
+│   │   └── transformer.py
+│   │
+│   ├── train.py
+│   ├── evaluate.py
+│   ├── inference.py
+│   ├── metrics.py
+│   └── utils.py
+│
+├── scripts/
+│   ├── prepare_data.*
+│   ├── train_rnn.*
+│   ├── train_gru.*
+│   ├── train_lstm.*
+│   ├── train_transformer.*
+│   └── evaluate_all.*
+│
+├── checkpoints/
+├── logs/
+├── results/
+│   ├── metrics.csv
+│   ├── predictions/
+│   ├── error_analysis.csv
+│   └── length_analysis.csv
+│
+├── figures/
+└── paper_notes/
+
+The exact structure may be improved if there is a better engineering reason.
+
+==================================================
+14. SIMPLE COMMANDS
+==================================================
+
+I want the finished project to be easy to run.
+
+Aim for commands similar to:
+
+python -m src.data.preprocess
+
+python -m src.train --model rnn
+python -m src.train --model gru
+python -m src.train --model lstm
+python -m src.train --model transformer
+
+python -m src.evaluate --model all
+
+python -m src.inference \
+  --model transformer \
+  --text "..."
+
+Provide Windows and Linux instructions where necessary.
+
+==================================================
+15. VERIFY THE IMPLEMENTATION
+==================================================
+
+Do not simply write files and assume they work.
+
+Perform:
+- import tests
+- tensor shape tests
+- one batch forward pass for every model
+- loss computation
+- backward pass
+- tiny overfit test on a few examples
+- inference test
+- metric test
+- save/load checkpoint test
+
+Fix bugs you encounter.
+
+The final code must be internally consistent.
+
+==================================================
+16. RESOURCE MANAGEMENT
+==================================================
+
+The real target machine has RTX 4050 Laptop GPU with 6 GB VRAM.
+
+Therefore:
+
+- avoid oversized models
+- avoid unnecessarily large batch sizes
+- use padding masks correctly
+- use mixed precision if beneficial
+- monitor memory when possible
+- release unused GPU objects between model runs
+- save processed dataset so preprocessing is not repeated
+- make num_workers configurable
+- make CPU-only mode work as a fallback
+
+Provide an estimated VRAM requirement for each model based on actual observation if you can run it, otherwise clearly label estimates as estimates.
+
+==================================================
+17. RESEARCH PAPER OUTPUTS
+==================================================
+
+While doing the engineering work, maintain research notes.
+
+Create document-ready content for:
+
+1. Introduction
+2. Research Problem
+3. Research Questions
+4. Related Work notes
+5. Dataset
+6. Preprocessing
+7. Model Architectures
+8. Experimental Setup
+9. Evaluation Metrics
+10. Results
+11. Error Analysis
+12. Discussion
+13. Limitations
+14. Conclusion
+15. Future Work
+
+Do not fabricate citations.
+
+Use peer-reviewed or authoritative sources for factual claims.
+
+Clearly distinguish:
+- facts from sources
+- our design choices
+- measured experimental results
+- interpretations
+
+Prepare a final concise proposed paper title.
+
+==================================================
+18. EXPECTED RESEARCH CONTRIBUTION
+==================================================
+
+Do NOT claim that simply using RNN/GRU/LSTM/Transformer is novel.
+
+Frame the contribution honestly as a controlled comparative empirical study.
+
+Potential contribution:
+
+A controlled comparison of recurrent and attention-based neural architectures for low-resource Text-to-Sign-Language-Gloss translation under a unified preprocessing, training, decoding, and evaluation pipeline, including model complexity, sentence-length sensitivity, and qualitative error analysis.
+
+Refine this only after examining related literature.
+
+==================================================
+19. FUTURE MONGOLIAN EXTENSION
+==================================================
+
+Do not implement Mongolian translation yet unless the required dataset is available.
+
+However, document how this pipeline could later be adapted from:
+
+German Text → DGS Gloss
+
+to:
+
+Mongolian Text → Mongolian Sign Language Gloss
+
+Identify what would need to change:
+- text tokenizer
+- vocabulary
+- corpus
+- linguistic validation
+- gloss annotation
+- expert evaluation
+
+Keep the core model/evaluation framework reusable.
+
+==================================================
+20. PRIORITY ORDER
+==================================================
+
+If time or compute becomes constrained, prioritize in this exact order:
+
+1. Correct dataset processing
+2. Correct evaluation
+3. RNN + Attention
+4. GRU + Attention
+5. LSTM + Attention
+6. Transformer
+7. Final comparison
+8. Sentence-length analysis
+9. Error analysis
+10. Figures
+11. Paper-ready write-up
+12. Optional rule-based baseline
+13. Optional beam-search experiment
+
+Do not sacrifice correctness to add extra experiments.
+
+==================================================
+21. FINAL DELIVERABLE
+==================================================
+
+At the end I want:
+
+- fully runnable source code
+- requirements/environment instructions
+- dataset setup instructions
+- trained checkpoints if training was possible
+- preprocessing statistics
+- training logs
+- metrics.csv
+- predictions from each model
+- final comparison table
+- sentence length analysis
+- error analysis
+- all figures
+- README
+- methodology documentation
+- paper-ready Results section
+- paper-ready Discussion section
+- limitations
+- recommended next experiments
+
+Also provide a short summary in Mongolian explaining:
+
+1. What was actually completed
+2. What could not be completed and why
+3. Which model performed best based on REAL results
+4. Whether the results support the original hypothesis
+5. What I should present at the conference
+6. The exact commands I should run on my RTX 4050 6GB machine
+
+IMPORTANT:
+Do not make up experimental results.
+Do not silently substitute another dataset.
+Do not change the task into sign video recognition.
+Do not claim novelty before reviewing related work.
+Do not use the test set during development.
+Do not stop after planning; execute the project.

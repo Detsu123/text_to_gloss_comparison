@@ -1,0 +1,101 @@
+{
+  "dataset": "PHOENIX14T",
+  "vocab_fit_split": "train",
+  "vocab_including_special": {
+    "source": 2891,
+    "target": 1089
+  },
+  "vocab_excluding_special": {
+    "source": 2887,
+    "target": 1085
+  },
+  "splits": {
+    "train": {
+      "samples": 7096,
+      "missing_values": 0,
+      "duplicate_pairs": 117,
+      "text": {
+        "mean_length": 13.96293686583991,
+        "max_length": 52,
+        "min_length": 1,
+        "tokens": 99081,
+        "vocabulary": 2887,
+        "oov_types": 0,
+        "oov_tokens": 0,
+        "oov_rate": 0.0
+      },
+      "gloss": {
+        "mean_length": 7.78565388951522,
+        "max_length": 30,
+        "min_length": 1,
+        "tokens": 55247,
+        "vocabulary": 1085,
+        "oov_types": 0,
+        "oov_tokens": 0,
+        "oov_rate": 0.0
+      }
+    },
+    "dev": {
+      "samples": 519,
+      "missing_values": 0,
+      "duplicate_pairs": 4,
+      "text": {
+        "mean_length": 13.140655105973025,
+        "max_length": 32,
+        "min_length": 4,
+        "tokens": 6820,
+        "vocabulary": 951,
+        "oov_types": 57,
+        "oov_tokens": 57,
+        "oov_rate": 0.008357771260997068
+      },
+      "gloss": {
+        "mean_length": 7.2215799614643545,
+        "max_length": 18,
+        "min_length": 2,
+        "tokens": 3748,
+        "vocabulary": 393,
+        "oov_types": 12,
+        "oov_tokens": 14,
+        "oov_rate": 0.003735325506937033
+      }
+    },
+    "test": {
+      "samples": 642,
+      "missing_values": 0,
+      "duplicate_pairs": 2,
+      "text": {
+        "mean_length": 12.174454828660435,
+        "max_length": 30,
+        "min_length": 2,
+        "tokens": 7816,
+        "vocabulary": 1001,
+        "oov_types": 59,
+        "oov_tokens": 60,
+        "oov_rate": 0.007676560900716479
+      },
+      "gloss": {
+        "mean_length": 6.641744548286605,
+        "max_length": 18,
+        "min_length": 1,
+        "tokens": 4264,
+        "vocabulary": 411,
+        "oov_types": 19,
+        "oov_tokens": 19,
+        "oov_rate": 0.004455909943714822
+      }
+    }
+  },
+  "cross_split_overlap": {
+    "train_dev": {
+      "exact_pair_rows": 10,
+      "source_rows": 25,
+      "target_rows": 24
+    },
+    "train_test": {
+      "exact_pair_rows": 14,
+      "source_rows": 32,
+      "target_rows": 30
+    }
+  }
+}

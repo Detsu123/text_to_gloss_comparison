@@ -1,0 +1,18 @@
+{
+  "status": "Frozen before any test prediction evaluation",
+  "task": "German text to DGS gloss",
+  "dataset": "PHOENIX14T ordinary corpus CSV; pinned aipieces metadata mirror",
+  "splits": "official; no reshuffling, no removal in primary evaluation",
+  "models": ["rnn", "gru", "lstm", "transformer"],
+  "seeds": [42, 43, 44],
+  "epochs": 10,
+  "selection": "highest dev corpus BLEU-4, earliest on ties",
+  "primary_metric": "test corpus BLEU-4, SacreBLEU 2.5.1 tokenize=none, case=mixed, smooth=exp, effective_order=false",
+  "decoding": "greedy, cap 80, suppress PAD and SOS, stop EOS",
+  "length_thresholds": [11,16],
+  "threshold_fit": "training source-token length tertiles",
+  "sensitivity": "exclude exact text/gloss pairs present in train; keep official benchmark primary",
+  "precision": "CPU FP32",
+  "constraints": "128 width, matched width not matched parameter count; common optimizer and budget; shared CPU timing",
+  "future_protocol": "default.yaml 256 width, max 40 epochs, not part of executed pilot"
+}

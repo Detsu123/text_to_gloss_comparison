@@ -1,0 +1,10 @@
+lstm epoch=1 train=4.9340 dev=4.2840 BLEU4=0.343 seconds=7.9
+lstm epoch=2 train=4.1518 dev=3.7252 BLEU4=3.793 seconds=7.6
+lstm epoch=3 train=3.7523 dev=3.4192 BLEU4=5.733 seconds=7.6
+lstm epoch=4 train=3.4782 dev=3.2071 BLEU4=7.143 seconds=7.8
+lstm epoch=5 train=3.2624 dev=3.0409 BLEU4=9.254 seconds=8.2
+lstm epoch=6 train=3.0896 dev=2.9450 BLEU4=9.916 seconds=8.4
+lstm epoch=7 train=2.9438 dev=2.8421 BLEU4=10.808 seconds=7.8
+lstm epoch=8 train=2.8197 dev=2.7911 BLEU4=10.843 seconds=7.5
+lstm epoch=9 train=2.7121 dev=2.7295 BLEU4=12.163 seconds=8.1
+lstm epoch=10 train=2.6141 dev=2.6962 BLEU4=12.987 seconds=8.6

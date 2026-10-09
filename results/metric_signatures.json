@@ -1,0 +1,98 @@
+{
+  "rnn_seed42": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "gru_seed42": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "lstm_seed42": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "transformer_seed42": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "rnn_seed43": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "gru_seed43": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "lstm_seed43": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "transformer_seed43": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "rnn_seed44": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "gru_seed44": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "lstm_seed44": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  },
+  "transformer_seed44": {
+    "bleu1": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:1",
+    "bleu2": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:2",
+    "bleu3": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:3",
+    "bleu4": "nrefs:1|case:mixed|eff:no|tok:none|smooth:exp|version:2.5.1|max_order:4",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.5.1",
+    "ter": "nrefs:1|case:mixed|tok:tercom|norm:no|punct:yes|asian:no|version:2.5.1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source": "PHOENIX14T metadata mirror, pinned commit; official archive README obtained separately",
+  "retrieved": "2026-10-08",
+  "files": [
+    {
+      "split": "train",
+      "url": "https://huggingface.co/datasets/aipieces/RWTH-PHOENIX-Weather-2014T/resolve/ebb29ba996f748f5775b0a95a515d49b729e2ddb/annotations/manual/PHOENIX-2014-T.train.corpus.csv",
+      "sha256": "cc3dc2461f0a222b92f3927c24ac21c1467f3e5428b406ee7fe40bca1b0b8d44",
+      "bytes": 1688455
+    },
+    {
+      "split": "dev",
+      "url": "https://huggingface.co/datasets/aipieces/RWTH-PHOENIX-Weather-2014T/resolve/ebb29ba996f748f5775b0a95a515d49b729e2ddb/annotations/manual/PHOENIX-2014-T.dev.corpus.csv",
+      "sha256": "1085141d0ed6f28c6de6196a271b72c07366ed3fe5470c9717bd44640737f00b",
+      "bytes": 119165
+    },
+    {
+      "split": "test",
+      "url": "https://huggingface.co/datasets/aipieces/RWTH-PHOENIX-Weather-2014T/resolve/ebb29ba996f748f5775b0a95a515d49b729e2ddb/annotations/manual/PHOENIX-2014-T.test.corpus.csv",
+      "sha256": "632b19c9a87fb9c98b0821e04861750565348bce20a069c6dea1bba5bda27879",
+      "bytes": 142164
+    }
+  ]
+}

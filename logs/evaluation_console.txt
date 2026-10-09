@@ -1,0 +1,15 @@
+/root/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:502: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+      model  seed     bleu4      chrf       ter   n
+        rnn    42  7.390843 33.428980 74.624765 642
+        gru    42 14.683351 45.503948 63.742964 642
+       lstm    42 11.551899 42.946479 65.220450 642
+transformer    42  7.938984 34.639548 85.365854 642
+        rnn    43  7.532969 34.661949 73.897749 642
+        gru    43 14.308873 45.134849 63.555347 642
+       lstm    43 13.298912 44.336003 63.625704 642
+transformer    43  8.586065 36.880875 73.217636 642
+        rnn    44  8.064033 34.344659 72.842402 642
+        gru    44 13.852993 44.292595 62.828330 642
+       lstm    44 12.108650 43.641412 64.024390 642
+transformer    44  8.379047 36.811067 74.132270 642

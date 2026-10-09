@@ -1,0 +1,52 @@
+{
+  "normalization": "NFC + whitespace",
+  "tokenizer": "case-sensitive whitespace",
+  "length_bins_train_tertiles": [
+    11,
+    16
+  ],
+  "length_bin_rule": "short <= q1; medium q1 < n <= q2; long > q2",
+  "split_policy": "official unchanged; duplicates audited; unseen-pair sensitivity reported",
+  "dataset": "PHOENIX14T",
+  "raw_manifest": {
+    "train": {
+      "path": "data/raw/PHOENIX-2014-T.train.corpus.csv",
+      "sha256": "cc3dc2461f0a222b92f3927c24ac21c1467f3e5428b406ee7fe40bca1b0b8d44",
+      "columns": [
+        "name",
+        "video",
+        "start",
+        "end",
+        "speaker",
+        "orth",
+        "translation"
+      ]
+    },
+    "dev": {
+      "path": "data/raw/PHOENIX-2014-T.dev.corpus.csv",
+      "sha256": "1085141d0ed6f28c6de6196a271b72c07366ed3fe5470c9717bd44640737f00b",
+      "columns": [
+        "name",
+        "video",
+        "start",
+        "end",
+        "speaker",
+        "orth",
+        "translation"
+      ]
+    },
+    "test": {
+      "path": "data/raw/PHOENIX-2014-T.test.corpus.csv",
+      "sha256": "632b19c9a87fb9c98b0821e04861750565348bce20a069c6dea1bba5bda27879",
+      "columns": [
+        "name",
+        "video",
+        "start",
+        "end",
+        "speaker",
+        "orth",
+        "translation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+experiment: phoenix14t_stronger
+
+processed: data/processed/phoenix14t
+output: runs/phoenix14t_stronger
+
+seed: 42
+device: auto
+
+threads: 4
+num_workers: 0
+
+# ==================================================
+# Shared model dimensions
+# ==================================================
+
+embedding_size: 384
+hidden_size: 384
+
+# Recurrent architectures
+recurrent_layers: 2
+
+# Transformer
+transformer_layers: 3
+n_heads: 6
+feedforward_dim: 1024
+
+dropout: 0.25
+
+# ==================================================
+# Training
+# ==================================================
+
+# RTX 4050 6 GB-safe starting point
+batch_size: 8
+
+# Effective batch size = 8 x 2 = 16
+grad_accumulation: 2
+
+max_epochs: 80
+
+# Recurrent models
+patience: 12
+learning_rate: 0.0008
+
+weight_decay: 0.00001
+clip_grad: 1.0
+
+# Slightly reduce pure teacher forcing
+teacher_forcing: 0.9
+
+amp: true
+
+max_decode_len: 100
+
+# ==================================================
+# Transformer-specific training
+# ==================================================
+
+transformer_learning_rate: 0.0003
+
+transformer_warmup_steps: 800
+
+transformer_min_lr_ratio: 0.08
+
+transformer_label_smoothing: 0.1
+
+# Don't stop Transformer too early
+transformer_min_epochs: 25
+transformer_patience: 15
+
+min_delta: 0.0001

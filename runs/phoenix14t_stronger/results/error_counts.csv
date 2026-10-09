@@ -1,0 +1,13 @@
+model,seed,deletions,insertions,substitutions,order_only_candidate,repetition_candidate,short_output_candidate,unknown_output,hit_max_length
+rnn,42,1224,311,1803,6,19,62,0,0
+gru,42,764,527,1607,4,45,6,0,0
+lstm,42,717,484,1392,8,75,7,0,0
+transformer,42,1097,421,1363,11,8,38,0,0
+rnn,43,1472,283,1680,0,24,113,0,0
+gru,43,767,460,1501,6,35,10,0,0
+lstm,43,736,474,1337,6,70,17,0,0
+transformer,43,1054,566,1424,8,11,26,0,1
+rnn,44,1101,383,1756,6,25,45,0,0
+gru,44,768,545,1519,5,26,9,0,0
+lstm,44,763,419,1340,9,90,18,0,0
+transformer,44,1150,406,1298,12,4,34,0,0

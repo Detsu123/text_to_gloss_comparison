@@ -1,0 +1,15 @@
+{
+  "model": "rnn",
+  "seed": 43,
+  "dataset": "PHOENIX14T",
+  "experiment": "phoenix14t_stronger",
+  "parameters": 3573057,
+  "best_epoch": 39,
+  "epochs_run": 51,
+  "best_dev_bleu4": 7.407062152849487,
+  "training_wall_seconds": 1341.737132831,
+  "train_only_seconds": 1311.2755948830027,
+  "peak_gpu_memory_mib": 181.12451171875,
+  "device": "cuda",
+  "train_dev_fingerprint": "4083e21613355c0b5602657d7a9951f6366120e562f0f2e8613bcbbf1529c44b"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-08",
+  "models": 4,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs_per_run": 10,
+  "real_test_predictions": 7704,
+  "saved_metric_recomputation": "all matched within 1e-9",
+  "figure_families": 8,
+  "figure_formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "gpu_available": false,
+  "source": "PHOENIX14T annotation mirror, pinned commit",
+  "test_used_for_training_or_checkpoint_selection": false
+}

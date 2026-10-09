@@ -1,0 +1,15 @@
+{
+  "model": "lstm",
+  "seed": 44,
+  "dataset": "PHOENIX14T",
+  "experiment": "phoenix14t_stronger",
+  "parameters": 7121217,
+  "best_epoch": 8,
+  "epochs_run": 20,
+  "best_dev_bleu4": 21.11820702538084,
+  "training_wall_seconds": 619.4183658929996,
+  "train_only_seconds": 605.4070629330017,
+  "peak_gpu_memory_mib": 357.810546875,
+  "device": "cuda",
+  "train_dev_fingerprint": "4083e21613355c0b5602657d7a9951f6366120e562f0f2e8613bcbbf1529c44b"
+}

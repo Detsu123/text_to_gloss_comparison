@@ -1,0 +1,12 @@
+/root/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:502: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+transformer epoch=1 train=4.6903 dev=3.9876 BLEU4=2.105 seconds=37.7
+transformer epoch=2 train=4.0533 dev=3.6675 BLEU4=4.878 seconds=17.3
+transformer epoch=3 train=3.8104 dev=3.4713 BLEU4=5.423 seconds=31.6
+transformer epoch=4 train=3.6356 dev=3.3155 BLEU4=6.454 seconds=18.9
+transformer epoch=5 train=3.5066 dev=3.2028 BLEU4=7.631 seconds=23.2
+transformer epoch=6 train=3.3952 dev=3.1775 BLEU4=7.494 seconds=23.2
+transformer epoch=7 train=3.3026 dev=3.1149 BLEU4=7.906 seconds=23.1
+transformer epoch=8 train=3.2293 dev=3.0476 BLEU4=8.463 seconds=22.8
+transformer epoch=9 train=3.1537 dev=3.0072 BLEU4=7.922 seconds=19.2
+transformer epoch=10 train=3.0941 dev=2.9684 BLEU4=9.032 seconds=21.1

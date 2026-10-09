@@ -1,0 +1,11 @@
+{
+  "python": "3.9.25",
+  "torch": "2.8.0+cu128",
+  "numpy": "1.26.4",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "device": "cuda",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "cpu": "x86_64",
+  "cpu_count": 16
+}

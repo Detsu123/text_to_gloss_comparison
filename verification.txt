@@ -1,0 +1,8 @@
+................                                                         [100%]
+=============================== warnings summary ===============================
+tests/test_pipeline.py::test_shapes_backward_padding_causality_checkpoint[transformer]
+  /root/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:502: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+    output = torch._nested_tensor_from_mask(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 4.21s

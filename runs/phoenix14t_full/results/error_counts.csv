@@ -1,0 +1,5 @@
+model,seed,deletions,insertions,substitutions,order_only_candidate,repetition_candidate,short_output_candidate,unknown_output,hit_max_length
+rnn,42,1130,402,1615,10,10,61,0,0
+gru,42,740,598,1570,4,16,12,0,0
+lstm,42,720,562,1462,9,25,9,0,0
+transformer,42,1222,356,1222,12,2,48,0,0

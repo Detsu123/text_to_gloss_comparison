@@ -1,0 +1,15 @@
+{
+  "model": "gru",
+  "seed": 42,
+  "dataset": "PHOENIX14T",
+  "experiment": "phoenix14t_cpu_pilot",
+  "parameters": 897345,
+  "best_epoch": 10,
+  "epochs_run": 10,
+  "best_dev_bleu4": 15.740383381475931,
+  "training_wall_seconds": 81.31614061900007,
+  "train_only_seconds": 76.55128638399981,
+  "peak_gpu_memory_mib": null,
+  "device": "cpu",
+  "train_dev_fingerprint": "4083e21613355c0b5602657d7a9951f6366120e562f0f2e8613bcbbf1529c44b"
+}

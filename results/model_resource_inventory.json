@@ -1,0 +1,58 @@
+[
+  {
+    "configuration": "config/cpu_pilot.yaml",
+    "model": "rnn",
+    "parameters": 765249,
+    "fp32_adam_state_lower_bound_mib": 11.676773071289062,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/cpu_pilot.yaml",
+    "model": "gru",
+    "parameters": 897345,
+    "fp32_adam_state_lower_bound_mib": 13.692398071289062,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/cpu_pilot.yaml",
+    "model": "lstm",
+    "parameters": 963393,
+    "fp32_adam_state_lower_bound_mib": 14.700210571289062,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/cpu_pilot.yaml",
+    "model": "transformer",
+    "parameters": 1312961,
+    "fp32_adam_state_lower_bound_mib": 20.034194946289062,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/default.yaml",
+    "model": "rnn",
+    "parameters": 1758785,
+    "fp32_adam_state_lower_bound_mib": 26.836929321289062,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/default.yaml",
+    "model": "gru",
+    "parameters": 2285121,
+    "fp32_adam_state_lower_bound_mib": 34.86817932128906,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/default.yaml",
+    "model": "lstm",
+    "parameters": 2548289,
+    "fp32_adam_state_lower_bound_mib": 38.88380432128906,
+    "gpu_peak_mib": null
+  },
+  {
+    "configuration": "config/default.yaml",
+    "model": "transformer",
+    "parameters": 3935553,
+    "fp32_adam_state_lower_bound_mib": 60.05177307128906,
+    "gpu_peak_mib": null
+  }
+]
